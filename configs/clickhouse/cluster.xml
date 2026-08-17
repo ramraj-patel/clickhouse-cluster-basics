@@ -1,0 +1,34 @@
+<clickhouse>
+    <!-- Keeper connection — all CH nodes talk to the same 3-node quorum -->
+    <zookeeper>
+        <node>
+            <host>keeper-1</host>
+            <port>9181</port>
+        </node>
+        <node>
+            <host>keeper-2</host>
+            <port>9181</port>
+        </node>
+        <node>
+            <host>keeper-3</host>
+            <port>9181</port>
+        </node>
+    </zookeeper>
+
+    <!-- Cluster topology: 1 shard, 2 replicas -->
+    <remote_servers>
+        <cluster_1s2r>
+            <shard>
+                <internal_replication>true</internal_replication>
+                <replica>
+                    <host>clickhouse-1</host>
+                    <port>9000</port>
+                </replica>
+                <replica>
+                    <host>clickhouse-2</host>
+                    <port>9000</port>
+                </replica>
+            </shard>
+        </cluster_1s2r>
+    </remote_servers>
+</clickhouse>

@@ -6,7 +6,7 @@ Hands-on ClickHouse cluster learning project. See [docs/01-problem-statement.md]
 
 ## Current Phase
 
-Phase 1 — Single Node Fundamentals (files created, ready to run)
+Phase 2 — Keeper + Replication (complete)
 
 ## Commands
 
