@@ -37,4 +37,4 @@ See [Prerequisites](docs/03-prerequisites.md) for the full environment checklist
 
 ## License
 
-MIT
+Apache 2.0 — see [LICENSE](LICENSE).
