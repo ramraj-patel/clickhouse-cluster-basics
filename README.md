@@ -23,15 +23,31 @@ A hands-on learning project for building a ClickHouse cluster from a single node
 ## Quick Start
 
 ```bash
-# Verify prerequisites
-docker --version && docker compose version && echo "Ready"
-
-# Start Phase 1
-docker compose up -d
-
-# Connect
-docker compose exec clickhouse-server clickhouse-client
+git clone https://github.com/ramraj-patel/clickhouse-cluster-basics.git
+cd clickhouse-cluster-basics
+git fetch --tags
 ```
+
+Each completed phase is tagged so you can check out that snapshot (Compose, server, and Keeper configs) and validate it:
+
+| Tag | What you get | Start |
+|-----|--------------|-------|
+| `phase1` | Single ClickHouse node | `docker compose -f docker-compose.phase1.yml up -d` |
+| `phase2` | 3 Keepers + 2 replicas (1 shard) | `docker compose up -d` |
+
+```bash
+# Phase 1 — single node
+git checkout phase1
+docker compose -f docker-compose.phase1.yml up -d
+docker compose -f docker-compose.phase1.yml exec clickhouse-server clickhouse-client
+
+# Phase 2 — Keeper + replication
+git checkout phase2
+docker compose up -d
+docker compose exec clickhouse-1 clickhouse-client
+```
+
+Validation steps for each phase are in the [implementation plan](docs/02-implementation-plan.md). Commands for Phase 2+ are in the [command reference](docs/command-reference.md) (that file was added in Phase 2).
 
 See [Prerequisites](docs/03-prerequisites.md) for the full environment checklist.
 

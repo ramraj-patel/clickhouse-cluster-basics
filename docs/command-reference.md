@@ -2,6 +2,8 @@
 
 All Docker and SQL commands used throughout the project, organized by phase.
 
+To run a completed phase as it was frozen, check out the matching git tag (`phase1`, `phase2`, …). Clone/checkout commands are in the [README](../README.md#quick-start).
+
 ---
 
 ## Phase 1 — Single Node

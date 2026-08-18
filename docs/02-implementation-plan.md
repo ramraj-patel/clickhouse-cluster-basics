@@ -469,6 +469,6 @@ docker compose exec clickhouse-1 clickhouse-benchmark \
 1. Start with [Prerequisites](03-prerequisites.md) to validate your environment
 2. Read the [Reference Guide](04-reference-guide.md) alongside each phase — it explains the intent behind every config and query
 3. Work through phases sequentially — each builds on the previous
-4. Each phase has a branch so you can compare diffs between stages
+4. Each completed phase is tagged (`phase1`, `phase2`, …) so you can check out that snapshot and compare diffs between stages
 5. The `docs/notes/` files are your learning journal — write what surprised you
 6. The validation steps are your "definition of done" per phase
